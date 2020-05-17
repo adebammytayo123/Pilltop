@@ -16,7 +16,7 @@ function Home() {
                <div className="app">
                   <h1>Welcome to pilltop app</h1>
                   <h3>An app that helps you keep track of your drug prescriptions</h3>
-                  <img src={back}  className= "back" />
+                  <img src={back}  className= "back" alt="" />
                 </div>
                 <div className="last">
                   <h2>Login to your account</h2>
@@ -25,11 +25,7 @@ function Home() {
                       <br />
                       <input type="email" required />
                       <label>Password</label>
-<<<<<<< HEAD
                       <input type="password" required/>
-=======
-                      <input type="password" required />
->>>>>>> c3073db9a4b7124d7d93b96d180843d1fd8dd18f
                     </form>
                     <button className="hey">Login</button>
                     <p className="an"> Dont have an account? Sign up</p>
