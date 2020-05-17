@@ -14,7 +14,7 @@ function NavMobile() {
     <div>
         <nav className="navmobile">
             <div className="top">
-               <img src={drug}  className="pill"/>
+               <img src={drug}  className="pill" alt=""/>
                <h2 className="tol">Pilltol</h2>
             </div>
             <ul className="nav-links">
