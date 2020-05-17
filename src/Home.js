@@ -25,7 +25,11 @@ function Home() {
                       <br />
                       <input type="email" required />
                       <label>Password</label>
+<<<<<<< HEAD
                       <input type="password" required/>
+=======
+                      <input type="password" required />
+>>>>>>> c3073db9a4b7124d7d93b96d180843d1fd8dd18f
                     </form>
                     <button className="hey">Login</button>
                     <p className="an"> Dont have an account? Sign up</p>

@@ -22,6 +22,7 @@ function Here() {
                     <form name="RegForm" action="/signup" onClick="return formField()">
                         <div className="form">
                            <label>First Name</label>
+<<<<<<< HEAD
                            <input type="text" name="first"required />
                            <br />
                            <label>Last Name</label>
@@ -35,6 +36,21 @@ function Here() {
                            <br />
                            <label>Password</label>
                            <input type="password" name="password" required />
+=======
+                           <input type="text" name="first" />
+                           <br />
+                           <label>Last Name</label>
+                           <input type="text"  name="last"/>
+                           <br />
+                           <label>Email</label>
+                           <input type="text" name="email" />
+                           <br />
+                           <label>Age</label>
+                           <input type="number" number="age"/>
+                           <br />
+                           <label>Password</label>
+                           <input type="password" name="password" />
+>>>>>>> c3073db9a4b7124d7d93b96d180843d1fd8dd18f
                            <button className="but">Signup</button>
                            <p className="end">Already have an account? Login</p>
                            <Link style={navStyle} to="/home">
