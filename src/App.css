@@ -198,12 +198,13 @@ input {
   }
   .nav-links {
     display: flex;
-    width: 25%;
+    width: 15%;
     list-style: none;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     text-decoration: none;
     padding-left: 100px;
+    justify-content: space-evenly;
   }
   .app {
     display: none;
@@ -214,5 +215,43 @@ input {
     padding-left: 30px;
     text-align: left;
     font-size: 14px;
+  }
+  .hi {
+    padding-left: 50px;
+  }
+  .pres {
+    padding-left: 50px;
+  }
+  .last {
+    width: 100%; 
+    font-size: 14px;
+    margin-left: 200px;
+    padding: 35px;
+    float: right;
+  }
+  .hey{
+    margin-left: 70px;
+    text-align: center;
+    width: 75%;
+    height: 40px;
+  }
+  input {
+    width: 70%;
+  }
+  .an{
+    margin-left: 70px;
+  }
+  .we {
+    margin-left: -30px;
+  }
+  .account {
+    height: 520px;
+    width: 90%;
+    margin-top: 0px;
+    margin-left: 140px;
+    padding-top: -10px;
+    font-size: 15px;
+    text-align: start;
+    float: left;
   }
 } 
