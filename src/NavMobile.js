@@ -6,7 +6,7 @@ import drug from '../src/drug.jpg'
 function NavMobile() {
     const navStyle = {
         color: "white",
-        // textDecoration: "none"
+        textDecoration: "none"
     };
 
 
@@ -21,7 +21,7 @@ function NavMobile() {
                 <Link style={navStyle} to="/home">
                     <li className="hi">Home</li>
                 </Link>
-                <Link style={navStyle} to="/prescriptions">
+                <Link style={navStyle} to="/prescriptions" className="pres">
                     <li>Prescriptions</li>
                 </Link>
 

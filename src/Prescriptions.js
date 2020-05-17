@@ -14,7 +14,7 @@ function Prescriptions() {
                <div className="app">
                   <h1>Welcome to pilltop app</h1>
                   <h3>An app that helps you keep track of your drug prescriptions</h3>
-                  <img src={back}  className= "back" />
+                  <img src={back}  className= "back" alt="" />
                 </div>
                 <div className="last">
                   <h2>Login to your account</h2>
