@@ -19,7 +19,7 @@ function App() {
           <Route path="/" exact component={Page} />
           <Route path="/home" component={Home} />
           <Route path="/prescriptions" component={Prescriptions}/>
-          <Route path="/" component={Support} />
+          <Route path="/support" component={Support} />
           {/* <Route path="/home" component={Home} /> */}
           <Route path="/here" component={Here} />
           <Route path="/logout" component={Logout} />
