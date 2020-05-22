@@ -181,14 +181,14 @@ input {
     align-items: center;
     background-color: rgb(69, 182, 197);
     color: white;
-    width: 100%;
+    /* width: 100%; */
     min-height: 80px;
   }
   .top {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-left: 150px;
+    padding-left: 100px;
   }
   .pill {
     width: 50px;
