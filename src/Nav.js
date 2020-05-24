@@ -8,7 +8,7 @@ function Nav() {
         color: "white",
         textDecoration: "none"
     };
-
+    
 
   return (
     <div>
@@ -26,9 +26,6 @@ function Nav() {
                 </Link>
                 <Link style={navStyle} to="/support">
                     <li>Support</li>
-                </Link>
-                <Link style={navStyle} to="/logout">
-                    <li>Logout</li>
                 </Link>
 
             </ul>
