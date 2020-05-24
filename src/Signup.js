@@ -19,7 +19,7 @@ function Signup() {
                     </form>
                     <button className="hey">Login</button>
                     <p className="an"> Dont have an account? Sign up</p>
-                    <Link style={navStyle} to="/here">
+                    <Link style={navStyle} to="/Here">
                         <p className="we">here</p>
                     </Link>
                 </div> 

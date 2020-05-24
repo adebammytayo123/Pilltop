@@ -2,10 +2,8 @@ import React from 'react'
 import './App.css';
 // import back from './back.jpeg';
 // import { Link } from 'react-router-dom'
-import Signup from './Signup'
 import HomePage from './HomePage'
-
-
+import Signup from './Signup'
 
 
 function Home() {

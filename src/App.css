@@ -65,9 +65,9 @@
 .last {
   border: 1px solid aqua;
   height: 350px;
-  width: 50%;
+  width: 70%;
   margin-top: 70px;
-  margin-right: 40px;
+  margin-left: -30px;
   padding-top: 20px;
   font-size: 17px;
   text-align: start;
@@ -114,12 +114,12 @@ input {
   outline: none;
 }
 .an{
-  margin-left: 70px;
+  margin-left: 100px;
   margin-bottom: 0px;
   font-size: 15px;
 }
 .we {
-  padding-left: 280px;
+  padding-left: 310px;
   color: rgb(70, 149, 173);
   font-weight: normal;
   font-size: 15px;
