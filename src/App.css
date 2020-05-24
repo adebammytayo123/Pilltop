@@ -122,11 +122,18 @@ input {
   font-size: 15px;
 }
 .we {
-  padding-left: 310px;
+  padding-left: 330px;
   color: rgb(70, 149, 173);
   font-weight: normal;
   font-size: 15px;
   margin-top: -20px;
+}
+.me {
+  padding-left: 330px;
+  color: rgb(70, 149, 173);
+  font-weight: normal;
+  font-size: 15px;
+  margin-top: -35px;
 }
 .account {
   border: 1px solid aqua;

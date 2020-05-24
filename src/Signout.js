@@ -29,7 +29,7 @@ function Signout() {
                            <button className="but">Signup</button>
                            <p className="end">Already have an account? Login</p>
                            <Link style={navStyle} to="/home">
-                               <p className="we">here</p>
+                               <p className="me">here</p>
                            </Link>
                         </div>
                         
