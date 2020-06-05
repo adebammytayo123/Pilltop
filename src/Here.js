@@ -1,14 +1,14 @@
 import React from 'react'
-import HomePage from './HomePage'
-import Signout from './Signout'
+import Default from './Default'
+import Signup from './Signup'
 
 
 function Here() {
 
     return (
-        <div>
-            <HomePage />
-            <Signout />
+        <div className="pab">
+            <Default />
+            <Signup />
         </div>
     )
 }

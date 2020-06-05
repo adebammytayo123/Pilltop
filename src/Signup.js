@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import  { Link } from 'react-router-dom'
+
 
 function Signup() {
     const navStyle = {
@@ -7,22 +8,32 @@ function Signup() {
         textDecoration: "none"
     };
     return (
-        <div>
-            <div className="last">
-                  <h2>Login to your account</h2>
-                  <form>
-                      <label>Email</label>
-                      <br />
-                      <input type="email" required />
-                      <label>Password</label>
-                      <input type="password" required/>
+        <div className="signup">
+             <h2 className="heading">Create an account</h2>
+                    <form name="RegForm" action="/signup" onClick="return formField()">
+                        <div className="form">
+                           <label>First Name</label>
+                           <input type="text" name="first"required />
+                           <br />
+                           <label>Last Name</label>
+                           <input type="text"  name="last" required />
+                           <br />
+                           <label>Email</label>
+                           <input type="text" name="email" required />
+                           <br />
+                           <label>Age</label>
+                           <input type="number" number="age"required />
+                           <br />
+                           <label>Password</label>
+                           <input type="password" name="password" required />
+                           <button className="buton">Signup</button>
+                           <p className="account">Already have an account? Login</p>
+                           <Link style={navStyle} to="/home">
+                               <p className="link">here</p>
+                           </Link>
+                        </div>
+                        
                     </form>
-                    <button className="hey">Login</button>
-                    <p className="an"> Dont have an account? Sign up</p>
-                    <Link style={navStyle} to="/here">
-                        <p className="we">here</p>
-                    </Link>
-                </div> 
         </div>
     )
 }

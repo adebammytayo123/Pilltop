@@ -1,21 +1,46 @@
 import React from 'react'
 import './App.css';
-// import back from './back.jpeg';
-// import { Link } from 'react-router-dom'
-import HomePage from './HomePage'
-import Signup from './Signup'
+import Login from './Login'
+import Default from './Default'
 
 
 function Home() {
-        return (
+    
+    
+        return  (
             <div className="pab">
-                <HomePage />
-                <Signup />
+                <Default />
+                <Login />
             </div>
         );
 }
 
 export default Home;
+
+
+// import React from 'react'
+
+// cont Home =()=> {
+//     const [ loggedIn, setLoggedIn] = useState(false)
+
+//     const handleLoggedInTab = () =>{
+//     setLoggedIn(true)
+// }
+
+//     return (
+//         <div>
+//             <nav>
+//                 <a>home</a>
+//                 {loggedIn &&
+//                 <a>logout</a> 
+//                 }
+//             </nav>
+//             <button onClick={handleLoggedInTab}></button>
+//         </div>
+//     )
+// }
+
+// export default Home
 
 
 
