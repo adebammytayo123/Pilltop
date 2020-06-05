@@ -16,6 +16,7 @@ function App() {
         <Nav />
         <NavMobile />
         <switch> 
+          <Route path="/" component={Home} />
           <Route path="/home" component={Home} />
           <Route path="/prescriptions" component={Prescriptions}/>
           <Route path="/support" component={Support} />
@@ -25,6 +26,12 @@ function App() {
     </Router>
   );
 }
+
+const Homepage = () => (
+  <div>
+    <h1>Homepage</h1>
+  </div>
+)
 
 export default App;
   
