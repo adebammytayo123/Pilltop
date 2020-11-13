@@ -1,37 +1,52 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
-import Nav from './Nav';
-import back from './back.jpeg';
-import NavMobile from './NavMobile'
-import Home from './Home';
-import Prescriptions from './Prescriptions';
-import Support from './Support'
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import Here from './Here.js'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './components/Header';
+import Home from './components/home/Home';
+import Recipe from './components/Recipes/Recipes';
+import AddRecipe from './components/AddRecipes/AddRecipe';
+import SideDrawer from './components/sideDrawer/SideDrawer';
+import Backdrop from './components/Backdrop/Backdrop';
 
-function App() {
-  return (
-    <Router>
-      <div className="App">
-        <Nav />
-        <NavMobile />
-        <switch> 
-          <Route path="/" component={Home} />
-          <Route path="/home" component={Home} />
-          <Route path="/prescriptions" component={Prescriptions}/>
-          <Route path="/support" component={Support} />
-          <Route path="/here" component={Here} />
-        </switch>
+
+class App extends Component  {
+  state = {
+    sideDrawerOpen: false
+  }
+  drawerToggleClickHandler = () => {
+    this.setState((prevState) => {
+      return {
+        sideDrawerOpen: !prevState.sideDrawerOpen
+      }
+    })
+  }
+  backdropClickHandler = () => {
+    this.setState({sideDrawerOpen: false})
+  }
+
+  
+  render() {
+    let backdrop;
+    if (this.state.sideDrawerOpen) {
+      backdrop = <Backdrop click={this.backdropClickHandler} />
+    }
+    return (
+      <Router>
+        <div className="App">
+          <Header drawerClickHandler={this.drawerToggleClickHandler} />
+          <SideDrawer show={this.state.sideDrawerOpen} />
+          {backdrop}
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/recipe" component={Recipe} />
+          <Route path="/add" component={AddRecipe} />
+        </Switch>
       </div>
-    </Router>
-  );
+      </Router>
+    );
+ }
 }
-
-const Homepage = () => (
-  <div>
-    <h1>Homepage</h1>
-  </div>
-)
 
 export default App;
   

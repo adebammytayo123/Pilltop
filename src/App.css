@@ -1,253 +1,68 @@
+
+:root {
+    --mainYellow:#ffa400;
+  --mainWhite:#f3f3f3;
+  --mainGreen:#6cf89b;
+  --mainDark:#797575;
+  --mainRed:#f80606;
+}
+::-webkit-input-placeholder {
+  color: var(--mainWhite) !important;
+}
 .App {
-  text-align: center;
+  overflow: hidden;
+  height: 100%;
 }
-.nav {
+body {
+    font-family: 'Oswald', sans-serif;
+    color: var(--mainWhite) !important;
+}
+.text-title{
+    font-family:'Aclonica', sans-serif;
+    letter-spacing: 0.3rem;
+    text-transform: capitalize;
+    font-size: 3rem;
+    color: var(--mainGreen);
+}
+.text-white {
+  color: var(--mainWhite);
+  letter-spacing: 0.3rem;
+  background: var(--mainGreen);
+  padding: 2px 0;
+  align-self: center;
+  border-radius: 2rem;
+}
+.text {
+    font-size: 2em;
+}
+.toggle-btn {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgb(69, 182, 197);
-  color: white;
-  width: 100%;
-  min-height: 80px;
-}
-.navmobile {
-  display: none;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgb(69, 182, 197);
-  color: white;
-}
-.top {
-  width: 10%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 80px;
-}
-.pill {
-  width: 50px;
-  height: 50px;
-  border-radius: 30px;
- 
-}
-.nav-links {
-  display: flex;
-  width: 25%;
-  list-style: none;
+  flex-direction: column;
   justify-content: space-around;
-  align-items: center;
-  text-decoration: none;
-  padding-right: 200px;
+  height: 1.5rem;
+  width: 2rem;
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.pab {
-  display: flex;
-  width: 100%;
-}
-.left-side {
-  background-color: rgb(210, 244, 252);
-  width: 50%;
-  text-align: start;
-  height: 600px;
-  padding-left: 50px;
-}
-.paragraph {
-  font-size: 18px;
-  font-weight: bolder;
-}
-.back {
-  border-radius: 20%;
-}
-.login {
-  border: 1px solid aqua;
-  height: 350px;
-  width: 70%;
-  margin-top: 100px;
-  padding-top: 20px;
-  margin-right: 80px;
-  font-size: 17px;
-  text-align: start;
-  float: right;
-
-}
-.heading {
-  text-align: center;
-  font-size: 30px;
-}
-form {
-  margin-top: 30px;
-  margin-bottom: 15px;
-}
-label{
-  margin-left: 70px;
-}
-input {
-  width: 65%;
-  height: 30px;
-  margin-left: 70px;
-  margin-bottom: 15px;
-  padding-left: 10px;
-  border: 1px solid black;
-  border-radius: 8px;
-  background-color: rgb(229, 232, 235);
-}
-
-.log{
-  margin-left: 70px;
-  text-align: center;
-  width: 65%;
-  height: 30px;
-  border: 1px solid rgb(87, 190, 216);
-  border-radius: 10px;
-  background-color: rgb(87, 190, 216);
-  color: white;
-  font-family:  serif;
-  font-weight: bold;
-  cursor: pointer;
+.toggle-btn:focus {
   outline: none;
 }
-.sign-up{
-  margin-left: 100px;
-  margin-bottom: 0px;
-  font-size: 15px;
+.toggle-btn-line {
+  width: 2rem;
+  height: 0.15em;
+  background: var(--mainWhite);
 }
-.linked {
-  padding-left: 310px;
-  color: rgb(70, 149, 173);
-  font-weight: normal;
-  font-size: 15px;
-  margin-top: -18px;
+.btn-green {
+  background: transparent;
+  border: 1px solid var(--mainWhite);
+  border-color: var(--mainWhite);
+  color: var(--mainGreen);
+  border-radius: 0.3em;
+  padding: 0.3rem;
+  align-self: center; 
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  transition: all 1s linear;
 }
-.signup {
-  border: 1px solid aqua;
-  height: 560px;
-  width: 33%;
-  margin-top: 30px;
-  margin-left: 100px;
-  padding-top: -10px;
-  font-size: 15px;
-  text-align: start;
-  float: right;
-}
-.buton {
-  margin-top: 0px;
-  margin-left: 70px;
-  width: 65%;
-  height: 45px;
-  border: 1px solid rgb(87, 190, 216);
-  border-radius: 10px;
-  outline: none;
-  background-color: rgb(87, 190, 216);
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  font-family:  serif;
-}
-.account {
-  padding-left: 100px;
-}
-.link {
-  padding-left: 330px;
-  color: rgb(70, 149, 173);
-  font-weight: normal;
-  font-size: 15px;
-  margin-top: -35px;
-}
-
-@media only screen and ( max-width: 760px) {
-
-  .App {
-    width: 100%;
-    text-align: center;
-  }
-  .nav {
-    display: none;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgb(69, 182, 197);
-    color: white;
-    width: 100%;
-    min-height: 80px;
-  }
-  .navmobile {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgb(69, 182, 197);
-    color: white;
-    /* width: 100%; */
-    min-height: 80px;
-  }
-  .top {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-left: 100px;
-  }
-  .pill {
-    width: 50px;
-    height: 50px;
-    border-radius: 30px;
-    margin-right: -60px;
-   
-  }
-  .nav-links {
-    display: flex;
-    width: 15%;
-    list-style: none;
-    justify-content: space-around;
-    align-items: center;
-    text-decoration: none;
-    padding-left: 50px;
-    justify-content: space-evenly;
-  }
-  .app {
-    display: none;
-    flex-direction: column ;
-    background-color: rgb(221, 250, 250);
-    width: 55%;
-    min-height: 530px;
-    padding-left: 30px;
-    text-align: left;
-    font-size: 14px;
-  }
-  .hi {
-    padding-left: 120px;
-  }
-  .pres {
-    padding-left: 10px;
-  }
-  .last {
-    width: 50%; 
-    font-size: 14px;
-    margin-right: -130px;
-    padding: 35px;
-    float: right;
-  }
-
-  .hey{
-    margin-left: 70px;
-    text-align: center;
-    width: 75%;
-    height: 40px;
-  }
-  input {
-    width: 70%;
-  }
-  .an{
-    margin-left: 70px;
-  }
-  .we {
-    margin-left: -30px;
-  }
-  .account {
-    height: 520px;
-    width: 100%;
-    margin-top: 0px;
-    margin-left: 140px;
-    padding-top: -10px;
-    font-size: 15px;
-    text-align: start;
-    float: left;
-  }
-} 
