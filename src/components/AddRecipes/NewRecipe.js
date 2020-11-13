@@ -13,9 +13,11 @@ const NewRecipe = ({ name, category, ingredients, description, recipes, setRecip
     };
     return (
         <RecipeWrapper>
-            <div className="new">
+           <div className="card mx-auto text-center my-5">
+                <div className="img-container p-5">
                 <img src={salad} alt={name} className="card-img-top py-2" style={{width: "12rem", height: "12rem"}} />
-                <li className="new-item text-center">{name}</li>
+                <p className="new-item text-center">{name}</p>
+               </div>
                 <div className="card-footer d-flex justify-content-betweeen my-3">
                     <button
                         onClick={() => setIsOpen(true)}
@@ -40,7 +42,19 @@ const NewRecipe = ({ name, category, ingredients, description, recipes, setRecip
 };
 
 const RecipeWrapper = styled.div`
-
+display: flex;
+justify-content: space-evenly;
+.card {
+    border-color: transparent;
+  background-color: var(--mainWhite);
+  transition: all 1s linear;
+}
+&:hover {
+  .card {
+    border: 0.04rem solid rgba(0,0,0,0.2);
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+  }
+}
 .card-img-top {
     transition: all 1s linear;
     border-radius: 3rem;

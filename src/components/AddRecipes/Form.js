@@ -45,7 +45,7 @@ const Form = ({ name, setName, category, setCategory, ingredients, setIngredient
    
    
     return (
-        <FormWrapper className=" col-10 col-lg-8 my-5 mx-auto text-center">
+        <FormWrapper className=" col-12 col-lg-8 my-5 mx-auto text-center">
             <form onSubmit={handleSubmit} className="form col-12">
                 <h1 className=" title font-italic text-capitalize mb-5">add your favorite recipe</h1>
                 <div className="form-field pb-3">
