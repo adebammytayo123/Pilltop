@@ -1,70 +1,110 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import Modal from './Modal';
+import React, { useState } from "react";
+import styled from "styled-components";
+import devices from '../utils/devices';
+import Modal from "./Modal";
 
 const Recipe = ({ recipe }) => {
   const { image, label, url, ingredients } = recipe.recipe;
-  const [ isOpen, setIsOpen ] = useState(false);
-    return (
-        <RecipeWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3 ">
-            <div className="card">
-                <div className="img-container py-3 px-5">
-                    <img src={image} alt={label} className="card-img-top" />
-                    <h6 className=" title text-center my-4">{label}</h6>
-                </div>
-                <div className="text-center py-2">
-                <a className="url" href={url}>URL</a>
-               </div>
-               <div className="card-footer text-center">
-                    <button onClick={() => setIsOpen(true)} className="btn-green">ingredients</button>
-            <Modal
-              onClose={ () => setIsOpen(false)}
-              open={isOpen}
-              ingredients={ingredients}
-            />
-                </div>
-            </div>
-        </RecipeWrapper>
-    )
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <RecipeWrapper>
+      <RecipeItem>
+        <ImageDiv>
+          <Image src={image} alt={label} />
+          <Heading>{label}</Heading>
+        </ImageDiv>
+        <LinkButton>
+        <LinkDiv>
+          <Link href={url} style={{color: "inherit", textDecoration: 'none'}}>URL</Link>
+        </LinkDiv>
+        <ButtonDiv>
+          <Button onClick={() => setIsOpen(true)}>ingredients</Button>
+          <Modal
+            onClose={() => setIsOpen(false)}
+            open={isOpen}
+            ingredients={ingredients}
+          />
+        </ButtonDiv>
+        </LinkButton>
+      </RecipeItem>
+    </RecipeWrapper>
+  );
 };
 
 const RecipeWrapper = styled.div`
-.card {
-  border-color: transparent;
-  background: var(--mainYellow) !important;
-  transition: all 1s linear;
-  height: 100%;
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+`;
+
+const RecipeItem = styled.div`
+display: block;
+background: rgba(0, 0, 0, 0.2);
+width: 350px;
+height: auto;
+padding: 2rem;
+margin-right: 2rem;
+border-color: transparent;
+transition: all 1s linear;
+border-radius: 5px;
+box-shadow: 2px 2px 5px 0px var(--lightPurple);
+  margin-bottom: 3rem;
+@media ${devices.mobile} {
+  width: 250px;
+  height: auto;
+  margin-bottom: 2.5rem;
 }
-.card-footer {
-  background: transparent;
-  border-top: transparent;
-  transition: all 1s linear;
+`
+const ImageDiv = styled.div`
+margin-top: 2rem;
+`
+const Image = styled.img`
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 300px;
+margin-bottom: 3rem;
+border-radius: 50%;
+transition: all 1s linear;
+@media ${devices.mobile} {
+  width: 200px;
 }
-&:hover {
-  .card {
-    border: 0.04rem solid rgba(0,0,0,0.2);
-    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
-  }
-}
-.card-img-top {
-    transition: all 1s linear;
-    border-radius: 3rem;
-}
-.img-container:hover .card-img-top {
-  transform: scale(1.2)
-}
-.title {
-    font-size: 1rem;
-    color: var(--mainWhite);
-}
-.url {
-    color: var(--mainGreen) !important;
-    text-decoration: none;
-}
-.url:hover {
-  color: var(--mainWhite);
+:hover {
+    transform: scale(1.2);
 }
 `
 
-export default Recipe
- 
+const Heading = styled.h3`
+text-align: center;
+letter-spacing: 3px;
+`
+
+const LinkButton = styled.div`
+display: flex;
+justify-content: space-between;
+`
+const LinkDiv = styled.div``
+const Link = styled.a``
+
+const ButtonDiv = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: center;
+`;
+
+const Button = styled.button`
+background: transparent;
+    color: var(--mainGreen);
+border-radius: 0.3em;
+padding: 0.3rem;
+align-self: center; 
+font-size: 1.2rem;
+text-transform: capitalize;
+transition: all 1s linear;
+cursor: pointer;
+:hover {
+border: 1px solid var(--mainGreen);
+color: var(--mainWhite);
+}`;
+
+export default Recipe;

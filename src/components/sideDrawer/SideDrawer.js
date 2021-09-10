@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./SideDrawer.css";
 import styled from "styled-components";
-import devices from "../utils/devices";
 
 const SideDrawer = (props) => {
   let drawerClassses = "side-drawer";
@@ -38,6 +37,13 @@ const SideDrawer = (props) => {
 const Nav = styled.div`
 display: flex;
 align-items: center;
+i {
+    position: absolute;
+    top: 5%;
+    right: 8%;
+    color: var(--lightPurple);
+    font-size: 2rem;
+}
 `;
 const NavLists = styled.ul`
 width: 100%;

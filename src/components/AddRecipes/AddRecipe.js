@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import background from '../Recipes/background.jpg';
+import devices from '../utils/devices';
+import banner from '../../Assets/banner.jpg';
 import Form from './Form';
-import NewRecipe from './NewRecipeList';
+import NewRecipeList from './NewRecipeList';
 
 
 const AddRecipe = () => {
@@ -16,9 +18,14 @@ const AddRecipe = () => {
 
   
     return (
-        <AddWrapper className="py-5">
-            <div className="container my-5">
-                <div className="row">
+        <RecipeWrapper>
+            <RecipeBody>
+        <Link to="/">
+          <Back>
+            <i class="fas fa-arrow-left"></i>
+            <span>Go Back</span>
+          </Back>
+        </Link>
                     <Form
                         name={name}
                         setName={setName}
@@ -31,25 +38,75 @@ const AddRecipe = () => {
                         recipes={recipes}
                         setRecipes={setRecipes}
                     />
-                </div>
-                <div className="row">
-                    <NewRecipe
+                <New>
+                    <NewRecipeList
                         recipes={recipes}
                         setRecipes={setRecipes}
                     />
-                </div>
-            </div>
-        </AddWrapper>
+                </New>
+            </RecipeBody>
+        </RecipeWrapper>
     )
 };
 
-const AddWrapper = styled.div`
-    width: 100%;
-    background-image: url(${background});
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center top;
-    background-size: cover;
+
+const RecipeWrapper = styled.div`
+  position: relative;
+  background: url(${banner});
+  background-color: rgba(0, 0, 0, 0.5) center center repeat !important;
+  background-size: cover;
+  width: 100%;
+  height: 1300px;
+  z-index: 1;
+  overflow-x: hidden;
+  ::before {
+    opacity: 0.7;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--mainPurple);
+    z-index: 1;
+  }
+  @media ${devices.mobile} {
+      height: 3000px;
+  }
+`;
+
+const RecipeBody = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem 2rem;
+  z-index: 5;
+  height: auto;
+`;
+
+const Back = styled.button`
+  margin: 4rem 2rem;
+  padding: 1rem;
+  background: transparent;
+  border: none;
+  box-shadow: 2px 2px 5px 0px var(--mainGreen);
+  cursor: pointer;
+  i {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: var(--mainGreen);
+  }
+  span {
+    font-size: 1.5rem;
+    margin-top: -2rem;
+    color: var(--mainWhite);
+  }
+`;
+
+const New = styled.div`
+margin-top: 5rem;
 `
 
 export default AddRecipe;

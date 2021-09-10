@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import devices from '../utils/devices';
 
 const Form = ({ name, setName, category, setCategory, ingredients, setIngredients, description, setDescription, recipes, setRecipes }) => {
-
 
     const nameInputHandler = (e) => {
         console.log(e.target.value)
@@ -33,7 +33,6 @@ const Form = ({ name, setName, category, setCategory, ingredients, setIngredient
             ...recipes,
             { name: name, category: category, ingredients: ingredients, description: description, completed: false, id: Math.random() * 1000 }
         ])
-        // console.log(setRecipes)
         setName("")
         setCategory("")
         setIngredients("")
@@ -45,100 +44,112 @@ const Form = ({ name, setName, category, setCategory, ingredients, setIngredient
    
    
     return (
-        <FormWrapper className=" col-12 col-lg-8 my-5 mx-auto text-center">
-            <form onSubmit={handleSubmit} className="form col-12">
-                <h1 className=" title font-italic text-capitalize mb-5">add your favorite recipe</h1>
-                <div className="form-field pb-3">
-                    <label className="font-italic" htmlFor="">recipe name</label>
-                    <input
+        <FormWrapper>
+            <Forms onSubmit={handleSubmit}>
+                <FormHeading>add your favorite recipe</FormHeading>
+                <FormField>
+                    <FormLabel htmlFor="">recipe name</FormLabel>
+                    <Input
                         name="name"
                         type="text"
                         value={name}
                         onChange={nameInputHandler}
-                        className="name-input"
                         placeholder="recipe name..." />
-                </div>
-                <div className="form-field pb-3">
-                    <label className="font-italic" htmlFor="">recipe category</label>
-                    <input
+                </FormField>
+                <FormField>
+                    <FormLabel htmlFor="">recipe category</FormLabel>
+                    <Input
                         name="category"
                         type="text"
                         value={category}
                         onChange={categoryInputHandler}
-                        className="name-input"
                         placeholder="recipe category..." />
-                </div>
-                <div className="form-field pb-3">
-                    <label className="font-italic" htmlFor="">recipe ingredients</label>
-                    <input
+                </FormField>
+                <FormField>
+                    <FormLabel htmlFor="">recipe ingredients</FormLabel>
+                    <Input
                         name="igredients"
                         type="text"
                         value={ingredients}
                         onChange={ingredientsInputHandler}
-                        className="name-input"
                         placeholder="seperated by commas ','..." />
-                </div>
-                <div className="form-field pb-3">
-                    <label className="font-italic" htmlFor="">cooking direction</label>
-                    <input
+                </FormField>
+                <FormField>
+                    <FormLabel className="font-italic" htmlFor="">cooking direction</FormLabel>
+                    <Input
                         name="description"
                         type="text"
                         value={description}
                         onChange={descriptionInputHandler}
-                        className="name-input"
                         placeholder="recipe description..." />
-                </div>
-                <button type="submit" className=" save-btn mx-auto text-center my-3">Save</button>
-            </form>
+                </FormField>
+                <Button type="submit">Save</Button>
+            </Forms>
         </FormWrapper>
     )
 };
 
 const FormWrapper = styled.div`
-background: var(--mainWhite);
+display: block;
+margin-left: auto;
+margin-right: auto;
+background: var(--mainPurple);
 padding: 2em;
 border-radius: 0.5rem;
-border: 0.1rem solid var(--mainGreen);
-width: 2000px;
-.form {
-    display: inline-block;
-    width: 100%;
-}
-.title {
-    color: var(--mainYellow)
-}
-.form-field {
-    width: 100%;
-}
-.form-field label {
-    width: 25%;
-    font-size: 1.2rem;
-   text-transform: capitalize;
-   color: var(--mainDark);
-}
-.form-field input {
-    width: 70%;
-    height: 3rem;
-    text-transform: capitalize;
-    margin-left: 1rem;
-    padding: 0.5rem;
-    font-size: 1rem;
-    background: var(--mainDark);
-    color: var(--mainWhite) !important;
-    border: 0.1rem solid var(--mainYellow);
-    border-radius: 0.2rem;
-    outline: none;
-}
-.save-btn {
-    padding: 0.3rem 1.2rem;
-    background: var(--mainDark);
-    color: var(--mainWhite);
-    border: 0.1em solid var(--mainYellow);
-    border-radius: 0.4rem;
-    font-size: 1.3rem;
-    letter-spacing: 0.1rem;
+width: 40%;
+@media ${devices.mobile} {
+    margin-left: -1rem;
+    width: 90%;
 }
 `
+
+const Forms = styled.form`
+display: inline-block;
+width: 100%;
+`
+
+const FormHeading = styled.h1`
+text-align: center;
+text-transform: capitalize;
+`
+const FormField = styled.div`
+width: 100%;
+display: flex;
+justify-content: space-between;
+`
+
+const FormLabel = styled.label`
+width: 25%;
+font-size: 1.2rem;
+text-transform: capitalize;
+`
+
+const Input = styled.input`
+width: 70%;
+height: 3rem;
+text-transform: capitalize;
+margin-bottom: 1.5rem;
+margin-left: 1rem;
+padding: 0.5rem;
+font-size: 1rem;
+background: rgba(0, 0, 0, 0.2);
+color: var(--mainWhite) !important;
+border-radius: 0.2rem;
+outline: none;
+`
+
+const Button = styled.button`
+float: right;
+padding: 0.3rem 1.2rem;
+background: rgba(0, 0, 0, 0.2);;
+color: var(--mainWhite);
+border-radius: 0.4rem;
+font-size: 1.3rem;
+border: 2px solid var(--mainGreen);
+letter-spacing: 0.1rem;
+cursor: pointer;
+`
+
 
 
 export default Form;

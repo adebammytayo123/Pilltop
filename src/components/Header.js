@@ -11,7 +11,7 @@ const Header = (props) => {
     <Nav>
       <NavWrapper>
         <NavTitle>
-          <i class="fas fa-pizza-slice hamburger"></i>
+          <i className="fas fa-pizza-slice hamburger"></i>
           <NavHeading><span>Taste </span> Maker</NavHeading>
         </NavTitle>
         <NavToggle>
@@ -36,10 +36,7 @@ const Header = (props) => {
               style={{ textDecoration: "none", color: "inherit" }}
               to="/add"
             >
-              <span className="plus-icon">
-                <i class="fas fa-plus plus"></i>{" "}
-              </span>
-              add recipe
+              Your recipes
             </Link>
           </NavList>
         </NavLists>
@@ -80,14 +77,14 @@ const Nav = styled.div`
   height: 100vh;
   z-index: 1;
   ::before {
-    opacity: 0.6;
+    opacity: 0.7;
     content: "";
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.9);
+    background: var(--mainPurple);
     z-index: 1;
   }
 `;
@@ -106,18 +103,13 @@ const NavWrapper = styled.nav`
   height: 60px;
   padding: 1rem 2rem;
   z-index: 5;
-  .plus-icon {
-    font-size: 1rem;
-    color: var(--lightPurple);
-    margin-right: 0.5rem;
-  }
 `;
 const NavTitle = styled.div`
   display: flex;
   align-items: center;
   .hamburger {
     font-size: 3rem;
-    color: var(--lightPurple);
+    color: var(--mainGreen);
   @media ${devices.mobile} {
       display: none;
   }
@@ -198,7 +190,7 @@ const BannerHead = styled.h1`
       display: none;
   }
   span {
-    color: var(--lightPurple);
+    color: var(--mainGreen);
   }
 `;
 const BannerPara = styled.h6`

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ChickenRecipes from './ChickenRecipes';
 import styled from 'styled-components';
+import devices from '../utils/devices';
 
 const Recipe = () => {
 
@@ -24,27 +25,50 @@ const Recipe = () => {
 
     return (
         <PopularWrapper>
-            <div className=" mx-auto text-white text-uppercase text-center">
-                <h2> recipes</h2>
-            </div>
-            <div className="container py-3">
-            <div className="row">
+            <RecipeHeading>
+                <Heading> Chicken Recipes</Heading>
+            </RecipeHeading>
+            <ChickenRecipe>
                 {chickenRecipes.map(chicken => (
                     <ChickenRecipes
                         key={chicken.recipe.ingredients}
                         chicken={chicken}
                     />
                 ))}
-            </div>
-          </div>
+            </ChickenRecipe>
         </PopularWrapper>
         
     )
 };
 
 const PopularWrapper = styled.div`
-    background: var(--mainWhite) !important;
+margin-top: 5rem;
     width: 100%;
+`
+
+const RecipeHeading = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: -1.5rem;
+font-family: "Aclonica", sans-serif;
+background: rgba(0, 0, 0, 0.5);
+color: var(--mainGreen) !important;
+letter-spacing: 0.2rem;
+height: 70px;
+text-transform: capitalize;
+border-radius: 2rem;
+`
+const Heading = styled.h2``
+const ChickenRecipe = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 5rem;
+  @media ${devices.mobile} {
+    display: block;
+  }
 `
 
 export default Recipe;

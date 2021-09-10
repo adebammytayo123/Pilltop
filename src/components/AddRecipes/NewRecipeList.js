@@ -1,13 +1,13 @@
 import React from 'react';
+import styled from 'styled-components';
+import devices from '../utils/devices';
 import Recipe from './NewRecipe';
 
 
 const NewRecipe = ({ recipes, setRecipes }) => {
     return (
         <React.Fragment>
-            <div className="py-5">
-            <div className="container">
-                    <div className="row">
+            <NewDiv>
               {recipes.map(recipe => (
                             <Recipe
                                key={recipe.id}
@@ -20,11 +20,17 @@ const NewRecipe = ({ recipes, setRecipes }) => {
                                setRecipes={setRecipes}
                             />
                         ))}
-                       </div>
-            </div>
-            </div>
+                        </NewDiv>
        </React.Fragment>
     )
 };
+
+const NewDiv = styled.div`
+display: flex;
+justify-content: center;
+@media ${devices.mobile} {
+    display: block;
+}
+`
 
 export default NewRecipe;

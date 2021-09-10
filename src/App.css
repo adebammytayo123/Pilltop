@@ -5,7 +5,7 @@
   --mainGreen:#6cf89b;
   --mainDark:#797575;
   --mainRed:#f80606;
-  --mainPurple: #080a16;
+  --mainPurple: #141935;
   --lightPurple: #938bf0;
 }
 ::-webkit-input-placeholder {
@@ -13,12 +13,12 @@
 }
 .App {
   overflow: hidden;
-  height: 100%;
 }
 body, html {
     font-family: 'Oswald', sans-serif;
     color: var(--mainWhite) !important;
-    background: var(--mainWhite);
+    width: 100% !important;
+    height: 100%;
 }
 .text-title{
     font-family:'Aclonica', sans-serif;
@@ -37,35 +37,4 @@ body, html {
 }
 .text {
     font-size: 2em;
-}
-/* .toggle-btn {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 1.5rem;
-  width: 2rem;
-  background: transparent;
-  border: none;
-  padding: 0;
-  box-sizing: border-box;
-}
-.toggle-btn:focus {
-  outline: none;
-}
-.toggle-btn-line {
-  width: 2rem;
-  height: 0.15em;
-  background: var(--mainWhite);
-} */
-.btn-green {
-  background: transparent;
-  border: 1px solid var(--mainWhite);
-  border-color: var(--mainWhite);
-  color: var(--mainGreen);
-  border-radius: 0.3em;
-  padding: 0.3rem;
-  align-self: center; 
-  font-size: 1.2rem;
-  text-transform: capitalize;
-  transition: all 1s linear;
 }
