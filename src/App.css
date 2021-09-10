@@ -5,6 +5,8 @@
   --mainGreen:#6cf89b;
   --mainDark:#797575;
   --mainRed:#f80606;
+  --mainPurple: #080a16;
+  --lightPurple: #938bf0;
 }
 ::-webkit-input-placeholder {
   color: var(--mainWhite) !important;
@@ -13,9 +15,10 @@
   overflow: hidden;
   height: 100%;
 }
-body {
+body, html {
     font-family: 'Oswald', sans-serif;
     color: var(--mainWhite) !important;
+    background: var(--mainWhite);
 }
 .text-title{
     font-family:'Aclonica', sans-serif;
@@ -35,7 +38,7 @@ body {
 .text {
     font-size: 2em;
 }
-.toggle-btn {
+/* .toggle-btn {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -53,7 +56,7 @@ body {
   width: 2rem;
   height: 0.15em;
   background: var(--mainWhite);
-}
+} */
 .btn-green {
   background: transparent;
   border: 1px solid var(--mainWhite);

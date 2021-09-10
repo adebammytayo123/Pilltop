@@ -48,7 +48,7 @@ function Categories() {
 }
 
 const CategoriesWrapper = styled.div`
-    background: var(--mainWhite) !important;
+background: var(--mainPurple);
     width: 100%;
 .popular-container {
     font-family:'Aclonica', sans-serif;

@@ -1,36 +1,62 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './SideDrawer.css';
-
+import React from "react";
+import { Link } from "react-router-dom";
+import "./SideDrawer.css";
+import styled from "styled-components";
+import devices from "../utils/devices";
 
 const SideDrawer = (props) => {
-    let drawerClassses = 'side-drawer';
-    if (props.show) {
-        drawerClassses = 'side-drawer open';
-    }
-    return (
-        <nav className={drawerClassses}>
-            <ul className="navbar-nav align-items-center ml-auto">
-           <i className=" hamburger  align-items-center  fas fa-hamburger "></i>
-                <li className="nav-item">
-                    <Link className="nav-link" to="/">
-                        home
-                    </Link>
-                </li>
-                <li className="nav-item">
-                    <Link className="nav-link" to="/recipe">
-                        recipe
-                    </Link>
-                </li>
-                <li className="nav-item">
-                    <Link className="nav-link" to="/add">
-                        <span><i className="fas icon fa-plus mr-2"></i></span>
-                        add recipe
-                    </Link>
-                </li>
-            </ul>
-        </nav>
-    )
+  let drawerClassses = "side-drawer";
+  if (props.show) {
+    drawerClassses = "side-drawer open";
+  }
+  return (
+    <Nav className={drawerClassses}>
+      <NavLists>
+        <NavList>
+          <Link style={{ textDecoration: "none", color: "inherit" }} to="/">
+            home
+          </Link>
+        </NavList>
+        <NavList>
+          <Link
+            style={{ textDecoration: "none", color: "inherit" }}
+            to="/recipe"
+          >
+            recipe
+          </Link>
+        </NavList>
+        <NavList>
+          <Link style={{ textDecoration: "none", color: "inherit" }} to="/add">
+            add recipe
+          </Link>
+        </NavList>
+      </NavLists>
+    </Nav>
+  );
 };
+
+const Nav = styled.div`
+display: flex;
+align-items: center;
+`;
+const NavLists = styled.ul`
+width: 100%;
+  display: block;
+  list-style: none;
+  padding: 0 !important;
+  color: var(--mainWhite) !important;
+`;
+
+const NavList = styled.li`
+display: flex;
+justify-content: center !important;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+  transition: 2s ease-in-out;
+  :hover {
+      background: var(--lightPurple);
+  }
+`;
 
 export default SideDrawer;
